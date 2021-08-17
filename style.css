@@ -45,7 +45,15 @@ input[type="submit"] {
 }
 
 #todos-list li {
+    display: flex;
+    justify-content: space-between;
     background: var(--light);
     margin-bottom: 5px;
     padding: 10px;
+}
+
+#todos-list li button {
+    background: firebrick;
+    color: var(--light);
+    cursor: pointer;
 }
