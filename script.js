@@ -3,7 +3,7 @@ var newTodoForm  = document.getElementById('new-todo-form');
 var newTodoInput = document.getElementById('new-todo');
 var todoList     = document.getElementById('todos-list');
 
-var todos = [];
+var todos = JSON.parse(localStorage.getItem('todos')) || [];
 
 function renderTodos() {
     // clear out list in DOM
@@ -23,6 +23,7 @@ function addTodo(event) {
     event.preventDefault();
     var newTodoText = newTodoInput.value;
     todos.push(newTodoText);
+    localStorage.setItem('todos', JSON.stringify(todos));
     newTodoInput.value = '';
     renderTodos();
 
