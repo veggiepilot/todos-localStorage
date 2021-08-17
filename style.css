@@ -1,3 +1,40 @@
+:root {
+    --light: rgb(227, 227, 240)
+}
+
 body {
-    background: rgb(227, 227, 240);
+    background: var(--light);
+    font-size: 22px;
+    font-family: sans-serif;
+}
+
+input {
+    font-size: 38px;
+    padding: 10px;
+}
+
+h1 {
+text-align: center;
+}
+
+button {
+    background: darkslateblue;
+    color: var(--light);
+    cursor: pointer;
+}
+
+.container {
+    background: white;
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 15px;
+
+}
+
+#new-todo-form {
+    display: flex;
+}
+
+#new-todo {
+    flex-grow: 1;
 }
