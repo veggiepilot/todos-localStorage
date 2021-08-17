@@ -1,11 +1,16 @@
-// localStorage.setItem('myName', 'Johannes');
-// localStorage.setItem('petName', 'Lucy');
-// localStorage.setItem('petAge', '9 months');
+// select DOM elements
+var newTodoForm  = document.getElementById('new-todo-form');
+var newTodoInput = document.getElementById('new-todo');
+var todoList     = document.getElementById('todos-list');
 
-// localStorage.setItem('petAge', 1);
+var todos = ["test", "test3333", "test3333walk the dog"];
 
-let myName = localStorage.getItem('myName');
-let petName = localStorage.getItem('petName');
-let petAge = localStorage.getItem('petAge');
+function addTodo(event) {
+    event.preventDefault();
+    var newTodoText = newTodoInput.value;
+    todos.push(newTodoText);
+    newTodoInput.value = '';
+    console.log(todos);
 
-console.log(myName, petAge, petName);
+}
+newTodoForm.addEventListener('submit', addTodo);
