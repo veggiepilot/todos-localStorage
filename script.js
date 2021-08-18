@@ -14,6 +14,8 @@ function renderTodos() {
     for (var i = 0; i < todos.length; i++) {
         // create an LI 
         var li = document.createElement("li");
+        // add data-id attribute to li
+        li.setAttribute('data-index', i);
         // insert text in LI
         li.innerText = todos[i];
         // create button el
@@ -37,5 +39,19 @@ function addTodo(event) {
     renderTodos();
 
 }
+
+function removeTodo(event) {
+    if ( event.target.tagName === "BUTTON") {
+        var idx = event.target.parentElement.getAttribute('data-index')
+        //remove element
+        todos.splice(idx, 1);
+        localStorage.setItem('todos', JSON.stringify(todos));
+        // re-render our todos list
+        renderTodos();
+    }
+}
+
+
 newTodoForm.addEventListener('submit', addTodo);
+todoList.addEventListener('click', removeTodo)
 renderTodos();
